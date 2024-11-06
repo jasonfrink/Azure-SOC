@@ -22,6 +22,10 @@ There are numerous menus options to complete for setting up the VM. You can see 
 ![image](https://github.com/user-attachments/assets/326e0fa3-14b8-4e9f-82a7-cc4874184a89)
 
 
+![image](https://github.com/user-attachments/assets/87c214dd-9573-4f53-800a-8c0e6a908164)
+
+
+
 <h3>Sentinel & Log Analytics</h3>
 
 After the Windows VM is running, we want to set up Microsoft Sentiel. It's a simple process, just search for Sentinel in the menu and follow the prompts. Sentinel needs to be added to the Azure resource group being used for the VM. 
