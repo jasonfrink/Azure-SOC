@@ -18,7 +18,8 @@ The machine is set up from the Azure main menu. For the lab, the preset configur
 There are numerous menus options to complete for setting up the VM. You can see in the image many of the options available. The VM created is Windows 10 Pro, configured with Port 3389 Remote Desktop Protocol (RDP) open and public IP address for networking. RDP needs to ben enabled to allow remote access to the VM, exposing it to external traffic to simulate potential security events. 
 
 
-![image](https://github.com/user-attachments/assets/5db8aa81-64e4-4aed-add7-6df6abb98a80)
+![image](https://github.com/user-attachments/assets/326e0fa3-14b8-4e9f-82a7-cc4874184a89)
+
 
 <h3>Sentinel & Log Analytics</h3>
 
@@ -69,13 +70,13 @@ To start, we can create a simple query to test. This query will filter for "succ
 
 ![image](https://github.com/user-attachments/assets/e6ab15b9-df12-4817-9109-bd21472a5d50)
 
-The query works and one of the events logged is a Microsoft service: Microsoft Service Security Auditing
+The query works and one of the events logged is a Microsoft service
+
+![image](https://github.com/user-attachments/assets/92a34c55-a463-4cf3-80aa-87ec10fdac0a)
 
 
-![image](https://github.com/user-attachments/assets/e7507375-d230-4091-b066-199a510aa956)
 
-
-Now we want to narrow this down to connections from external sources that would be potential threats--we want to filter out system account logins (i.e. Microsoft Service Security Auditing).
+Now we want to narrow this down to connections from external sources that would be potential threats--we want to filter out system account logins.
 
 We can use this revised query:
 
@@ -112,9 +113,22 @@ Now we can go back to the Analytics page within Sentinel and see our newly creat
 ![image](https://github.com/user-attachments/assets/60a9cee6-8b39-419d-a26f-2568fc81b328)
 
 
-Our alerts are now configured and we'll see any incidents on the Overview page for Sentinel.
+Our alerts are now configured and we'll see any incidents on the Overview page for Sentinel shown below. I was able to remotely log in to the Azure AM using RDP on my local machine. You can see these two events have been alerted in Sentinel. 
 
 
-![2024-11-06_13h24_19](https://github.com/user-attachments/assets/1081226a-77a3-42f1-aa88-c5e88273fc75)
+![2024-11-06_14h42_11](https://github.com/user-attachments/assets/3c4f7788-c03f-4eae-91ec-6b780d8330b6)
 
 
+Lastly we can investigate these incidents further within Sentinel and get more detailed logs regarding the events:
+
+![image](https://github.com/user-attachments/assets/9ae02817-3d60-4203-9b6d-ae7d9dcdf53c)
+
+
+![image](https://github.com/user-attachments/assets/6e478963-33f9-4aaa-91ad-4c680ba5d754)
+
+
+<h3>Project Summary</h3>
+
+This lab was a great hands-on way to get familiar with Azure and setiting up Sentinel to creat a SIEM and monitoring center. Summarize the key outcomes of the project, such as a functional SIEM, alerting rules, and hands-on monitoring experience.
+
+Potentianl additions to this lab in the future could invovle integrating additional threat intelligence sources, refining rules for real-world scenarios, or adding automated responses to incidents.
