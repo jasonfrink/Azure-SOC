@@ -19,9 +19,9 @@ The first step is setting up the Azure VM. The machine is set up from the Azure 
 There are numerous menus options to complete for setting up the VM. You can see in the image many of the options available. The VM created is Windows 10 Pro, configured with Port 3389 (RDP) open and public IP address for networking.
 <br>
 ![image](https://github.com/user-attachments/assets/5db8aa81-64e4-4aed-add7-6df6abb98a80)
-<br>
+
 After the Windows VM is running, we want to set up Microsoft Sentiel. It's a simple process, just search for Sentinel in the menu and follow the prompts. Sentinel needs to be added to the Azure resource group being used for the VM. 
-<br>
+
 ![image](https://github.com/user-attachments/assets/f287f8e8-226c-4fb4-9586-f6a54d4c4adf)
 <br>
 Part of the Sentinel setup process involves creating a log analytics workspace and then adding Sentinel to that workspace. In the image below, Sentinal has been added to the AzureSOC-LogAnalytics workspace.
