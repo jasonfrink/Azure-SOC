@@ -24,7 +24,7 @@ After the Windows VM is running, we want to set up Microsoft Sentiel. It's a sim
 <br>
 ![image](https://github.com/user-attachments/assets/f287f8e8-226c-4fb4-9586-f6a54d4c4adf)
 <br>
-Part of the Sentinel setup process involves creating a log analytics workspace and then adding Sentinel to that workspace. In the image below, Sentinal is part of the AzureSOC-LogAnalytics workspace.
+Part of the Sentinel setup process involves creating a log analytics workspace and then adding Sentinel to that workspace. In the image below, Sentinal has been added to the AzureSOC-LogAnalytics workspace.
 <br>
 ![image](https://github.com/user-attachments/assets/64dc8b06-10cb-442d-9ff7-6d5659f97aae)
 
