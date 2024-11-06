@@ -63,4 +63,54 @@ A Data Collection Rule needs to be created as part of the Windows Security Event
 
 
 <h3>Sentinel Logs</h3>
-Now that Sentinel within the log analytics workspace is configured to collect event logs from the Windows10 VM, we want to set up a query for specific types of events. 
+Now that Sentinel within the log analytics workspace is configured to collect event logs from the Windows10 VM, we want to set up a query for specific types of events. We specifically want to see RDP connections from external sources.
+
+To start, we can create a simple query to test. This query will filter for "successful" connections to the Windows10 VM.
+
+![image](https://github.com/user-attachments/assets/e6ab15b9-df12-4817-9109-bd21472a5d50)
+
+The query works and one of the events logged is a Microsoft service: Microsoft Service Security Auditing
+
+
+![image](https://github.com/user-attachments/assets/e7507375-d230-4091-b066-199a510aa956)
+
+
+Now we want to narrow this down to connections from external sources that would be potential threats--we want to filter out system account logins (i.e. Microsoft Service Security Auditing).
+
+We can use this revised query:
+
+
+![image](https://github.com/user-attachments/assets/b4d45676-3b2d-43ad-a844-31a375053067)
+
+Nothing matches the query at the moment as the Windows VM has only been running for a short amount of time. We'll keep the VM running and set up automated alerts in the meantime.
+
+<h3>Incident Monitoring and Response</h3>
+
+Instead of manually running queries, let's set up an automated rule that will alert us when there's a non-standard account login over RDP. 
+
+From the query we just created, we can select New Alert Rule --> Creat Microsoft Sentinel Alert
+
+
+![image](https://github.com/user-attachments/assets/83a2f49e-98d8-4a46-bf64-29fade33d93a)
+
+
+The parameters are in the image below. We've added a rule to only detect Initial Access (via RDP).
+
+
+![image](https://github.com/user-attachments/assets/8db4d5fc-d7de-4cf0-9985-9d5337d4d8e3)
+
+
+We can also add scheduling to make this more of a "real-time" alert. It's set to run every 5 minutes.
+
+
+![image](https://github.com/user-attachments/assets/7615bc0a-84b4-48f5-9886-ddd1be58983c)
+
+
+Now we can go back to the Analytics page within Sentinel and see our newly created rule is active.
+
+
+![image](https://github.com/user-attachments/assets/60a9cee6-8b39-419d-a26f-2568fc81b328)
+
+
+
+
