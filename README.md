@@ -112,5 +112,9 @@ Now we can go back to the Analytics page within Sentinel and see our newly creat
 ![image](https://github.com/user-attachments/assets/60a9cee6-8b39-419d-a26f-2568fc81b328)
 
 
+Our alerts are now configured and we'll see any incidents on the Overview page for Sentinel.
+
+
+![2024-11-06_13h24_19](https://github.com/user-attachments/assets/1081226a-77a3-42f1-aa88-c5e88273fc75)
 
 
