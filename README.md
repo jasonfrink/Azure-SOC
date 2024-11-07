@@ -8,6 +8,7 @@ Through this lab, I configured alerts, implemented threat intelligence feeds, an
 <br>
 
 <h2>Environment Setup</h2>
+
 - The first step for this project is creating the Azure environment and resource group creation. The resource group will contain all the project's resources for easier management and organization.
 
 - The machine is set up from the Azure main menu. For the lab, the preset configurations are used. 
@@ -16,7 +17,9 @@ Through this lab, I configured alerts, implemented threat intelligence feeds, an
 ![image](https://github.com/user-attachments/assets/bde790f1-2deb-41c1-b5ab-8cf681a94636)
 
 
-- There are numerous menus options to complete for setting up the VM. You can see in the image many of the options available. The VM created is Windows 10 Pro, configured with Port 3389 Remote Desktop Protocol (RDP) open and a public IP address for networking. RDP needs to ben enabled to allow remote access to the VM, exposing it to external traffic to simulate potential security events. 
+- There are numerous menus options to complete for setting up the VM. You can see in the image many of the options available. The VM created is Windows 10 Pro, configured with Port 3389 Remote Desktop Protocol (RDP) open and a public IP address for networking.
+
+- RDP needs to ben enabled to allow remote access to the VM, exposing it to external traffic to simulate potential security events. 
 
 
 ![image](https://github.com/user-attachments/assets/326e0fa3-14b8-4e9f-82a7-cc4874184a89)
@@ -28,7 +31,7 @@ Through this lab, I configured alerts, implemented threat intelligence feeds, an
 
 <h2>Sentinel & Log Analytics</h2>
 
-- After the Windows VM is running, we want to set up Microsoft Sentiel. Sentinel can be found in the search menu. Follow the prompts for installation. Sentinel will need to be added to the same Azure resource group as the Windows 10 VM. 
+- After the Windows VM is running, we want to set up Microsoft Sentinel. Sentinel can be found in the search menu. Follow the prompts for installation. Sentinel will need to be added to the same Azure resource group as the Windows 10 VM. 
 
 
 ![image](https://github.com/user-attachments/assets/f287f8e8-226c-4fb4-9586-f6a54d4c4adf)
@@ -45,6 +48,7 @@ Through this lab, I configured alerts, implemented threat intelligence feeds, an
 - In order for Sentinel to analyze the event logs from the Windows 10 VM, we need to add the VM to the log analytics workspace ('AzureSOC-LogAnalytics'). In the image below, there are currently no computers connected to 'AzureSOC-LogAnalytics'. 
 
 ![image](https://github.com/user-attachments/assets/3213c8ea-ea3e-4031-a9a2-08daefe1d74f)
+
 
 - In order to estblish a connection between 'AzureSOC-LogAnalytics' and Sentinel, a data connector needs to be configured within Sentinel to establish this connection. 
 
@@ -69,13 +73,16 @@ Through this lab, I configured alerts, implemented threat intelligence feeds, an
 
 
 <h2>Sentinel Logs</h2>
+
 - Now that Sentinel is configured to collect event logs from the Windows10 VM, we want to set up a query for specific types of events. We specifically want to see successful RDP connections--connections over RDP from external sources.
 
 - To start, we can create a simple query to test. This query will filter for "successful" connections to the Windows 10 VM.
  
 ![image](https://github.com/user-attachments/assets/e6ab15b9-df12-4817-9109-bd21472a5d50)
 
+
 - The query works and one of the events logged is a Microsoft service.
+
 
 ![image](https://github.com/user-attachments/assets/92a34c55-a463-4cf3-80aa-87ec10fdac0a)
 
@@ -132,6 +139,6 @@ Through this lab, I configured alerts, implemented threat intelligence feeds, an
 
 <h2>Project Summary</h2>
 
--This lab was a great hands-on way to get familiar with Azure and setiting up Sentinel to create a SIEM and monitoring center. 
+- This lab was a great hands-on way to get familiar with Azure and setiting up Sentinel to create a SIEM and monitoring center. 
 
-Potentianl additions to this lab in the future could invovle integrating additional threat intelligence sources, refining rules for real-world scenarios, or adding automated responses to incidents.
+-  Potentianl additions to this lab in the future could invovle integrating additional threat intelligence sources, refining rules for real-world scenarios, or adding automated responses to incidents.
