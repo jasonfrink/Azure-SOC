@@ -100,7 +100,7 @@ Through this lab, I configured alerts, implemented threat intelligence feeds, an
 
 - Instead of manually running queries, we want to set up an automated rule that will alert us when there's an account login over RDP. 
 
-- From the query we just created, we can select New Alert Rule --> Creat Microsoft Sentinel Alert
+- From the query we just created, we can select New Alert Rule --> Create Microsoft Sentinel Alert
 
 
 ![image](https://github.com/user-attachments/assets/83a2f49e-98d8-4a46-bf64-29fade33d93a)
@@ -124,7 +124,7 @@ Through this lab, I configured alerts, implemented threat intelligence feeds, an
 ![image](https://github.com/user-attachments/assets/60a9cee6-8b39-419d-a26f-2568fc81b328)
 
 
-- Our alerts are now configured and we'll see any incidents on the Overview page for Sentinel shown below. I was able to remotely log in to the Azure AM via RDP on my local machine. You can see these two events have been alerted in Sentinel. 
+- Our alerts are now configured and we'll see any incidents on the Overview page for Sentinel shown below. I was able to remotely log in to the Azure VM via RDP on my local machine. You can see these two events have been alerted in Sentinel. 
 
 
 ![2024-11-06_14h42_11](https://github.com/user-attachments/assets/3c4f7788-c03f-4eae-91ec-6b780d8330b6)
@@ -142,4 +142,4 @@ Through this lab, I configured alerts, implemented threat intelligence feeds, an
 
 - This lab was a great hands-on way to get familiar with Azure and setiting up Sentinel to create a SIEM and monitoring center. 
 
--  Potentianl additions to this lab in the future could invovle integrating additional threat intelligence sources, refining rules for real-world scenarios, or adding automated responses to incidents.
+- Potentianl additions to this lab in the future could invovle integrating additional threat intelligence sources, refining rules for real-world scenarios, or adding automated responses to incidents.
