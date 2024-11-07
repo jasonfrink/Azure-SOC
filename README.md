@@ -50,9 +50,10 @@ Through this lab, I configured alerts, implemented threat intelligence feeds, an
 ![image](https://github.com/user-attachments/assets/3213c8ea-ea3e-4031-a9a2-08daefe1d74f)
 
 
-- In order to estblish a connection between 'AzureSOC-LogAnalytics' and Sentinel, a data connector needs to be configured within Sentinel to establish this connection. 
+- To estblish a connection between 'AzureSOC-LogAnalytics' and Sentinel, a data connector needs to be configured within Sentinel to establish this connection. 
 
 - Within the Sentinel workspace, there's an option to add Data Connectors. Using the 'Content Hub' link, we can install the Windows Security Events data connector.
+
 
 ![image](https://github.com/user-attachments/assets/7c6bc876-114c-4b68-891f-a33cbea04d15)
 
