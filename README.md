@@ -7,16 +7,16 @@ This project walk-through details the setup of a personal Security Operations Ce
 Through this lab, I configured alerts, implemented threat intelligence feeds, and enabled real-time monitoring. This project provides a foundational experience in building and managing a SOC environment, using tools and processes similar to those deployed in real-world enterprise security setups.
 <br>
 
-<h3>Environment Setup</h3>
--The first step for this project is creatubg Azure environment and resource group creation. The resource group will contain all the project's resources for easier management and organization.
+<h2>Environment Setup</h2>
+-The first step for this project is creating the Azure environment and resource group creation. The resource group will contain all the project's resources for easier management and organization.
 
-The machine is set up from the Azure main menu. For the lab, the preset configurations are used. 
+-The machine is set up from the Azure main menu. For the lab, the preset configurations are used. 
 
 
 ![image](https://github.com/user-attachments/assets/bde790f1-2deb-41c1-b5ab-8cf681a94636)
 
 
-There are numerous menus options to complete for setting up the VM. You can see in the image many of the options available. The VM created is Windows 10 Pro, configured with Port 3389 Remote Desktop Protocol (RDP) open and public IP address for networking. RDP needs to ben enabled to allow remote access to the VM, exposing it to external traffic to simulate potential security events. 
+There are numerous menus options to complete for setting up the VM. You can see in the image many of the options available. The VM created is Windows 10 Pro, configured with Port 3389 Remote Desktop Protocol (RDP) open and a public IP address for networking. RDP needs to ben enabled to allow remote access to the VM, exposing it to external traffic to simulate potential security events. 
 
 
 ![image](https://github.com/user-attachments/assets/326e0fa3-14b8-4e9f-82a7-cc4874184a89)
@@ -26,15 +26,15 @@ There are numerous menus options to complete for setting up the VM. You can see 
 
 
 
-<h3>Sentinel & Log Analytics</h3>
+<h2>Sentinel & Log Analytics</h2>
 
-After the Windows VM is running, we want to set up Microsoft Sentiel. It's a simple process, just search for Sentinel in the menu and follow the prompts. Sentinel needs to be added to the Azure resource group being used for the VM. 
+After the Windows VM is running, we want to set up Microsoft Sentiel. Sentinel can be pulled up in the search menu and follow the prompts to install. Sentinel will need to be added to the same Azure resource group as the Windows 10 VM. 
 
 
 ![image](https://github.com/user-attachments/assets/f287f8e8-226c-4fb4-9586-f6a54d4c4adf)
 
 
-Part of the Sentinel setup process involves creating a log analytics workspace and then adding/connecting Sentinel to that workspace. In the image below, Sentinal has been added to the AzureSOC-LogAnalytics workspace. The log analytics workspace will store and manage logs for analysis. 
+Part of the Sentinel setup process involves creating a log analytics workspace and then adding/connecting Sentinel to that workspace. In the image below, Sentinal has been added to the 'AzureSOC-LogAnalytics' workspace. The log analytics workspace will store and manage logs for analysis. 
 
 
 ![image](https://github.com/user-attachments/assets/64dc8b06-10cb-442d-9ff7-6d5659f97aae)
@@ -42,13 +42,13 @@ Part of the Sentinel setup process involves creating a log analytics workspace a
 
 <h3>Data Connectors Configuration</h3>
 
-In order for Sentinel to analyze the event logs from the Windows 10 VM, we need to add the VM to the log analytics workspace. In the image below, there are currently no computers connected to the log analytics workspace. 
+In order for Sentinel to analyze the event logs from the Windows 10 VM, we need to add the VM to the log analytics workspace ('AzureSOC-LogAnalytics'). In the image below, there are currently no computers connected to 'AzureSOC-LogAnalytics'. 
 
 ![image](https://github.com/user-attachments/assets/3213c8ea-ea3e-4031-a9a2-08daefe1d74f)
 
-In order to set up this connection, data connectors need to be setup within Sentinel. 
+Data connectors need to be setup within Sentinel to establish this connection. 
 
-Within the Sentinel workspace, there's an option to at Data Connectors. Using the Content Hub link, we can install the Windows Security Events connector.
+Within the Sentinel workspace, there's an option to add Data Connectors. Using the 'Content Hub' link, we can install the Windows Security Events connector.
 
 ![image](https://github.com/user-attachments/assets/7c6bc876-114c-4b68-891f-a33cbea04d15)
 
